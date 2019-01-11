@@ -28,7 +28,7 @@ function handleGetAll(req, res, next) {
 function handleGetOne(req, res, next) {
   let id = req.params.id;
   req.model.get(id)
-    .then(records => res.json(records[0]))
+    .then(results => res.status(200).json(results))
     .catch(next);
 }
 
@@ -41,7 +41,7 @@ function handlePost(req, res, next) {
 
 function handlePut(req, res, next) {
   req.model.put(request.params.id, request.body)
-    .then( result => response.status(200).json(result) )
+    .then( result => res.status(200).json(result) )
     .catch( next );
 }
 

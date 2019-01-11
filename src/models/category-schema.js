@@ -6,7 +6,6 @@ require('mongoose-schema-jsonschema')(mongoose);
 
 const category = mongoose.Schema({
   name: { type:String, required:true },
-  // products: { type: Array, required: false },
   description: { type:String, required:true},
 },{toObject:{virtuals:true}, toJSON:{virtuals:true}});
 
